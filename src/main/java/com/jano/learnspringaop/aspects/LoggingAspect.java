@@ -14,7 +14,7 @@ public class LoggingAspect {
 
     //Pointcut - When?
     // execution(* PACKAGE.*.*(..))
-    @Before("execution(* com.jano.learnspringaop.*.*.*(..))")
+    @Before("com.jano.learnspringaop.aspects.CommonPointcutConfig.allPackageConfigUsingBean()")
     public void logMethodCallBeforeExecution(JoinPoint joinPoint) {
         logger.info("Before Aspect - {} is called with arguments: {}"
                 ,  joinPoint, joinPoint.getArgs());//WHAT
